@@ -1,0 +1,82 @@
+{
+    "sourceFile": "rust-example2/src/main.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1662824854964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662824868581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n fn main() {\n     println!(\"Hello, world!\");\n \n     let vx1 = [1,2,3];\n+    let vx2 = vec![1,2,3];\n+\n }\n"
+                },
+                {
+                    "date": 1662824910291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,7 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n+    println!(\"{}\",vx1);\n+\n }\n"
+                },
+                {
+                    "date": 1662824916047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n-    println!(\"{}\",vx1);\n+    println!(\"{:?}\",vx1);\n \n }\n"
+                },
+                {
+                    "date": 1662824953291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,8 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n-    println!(\"{:?}\",vx1);\n+    println!(\"{:#?}\",vx1);\n \n+\n }\n"
+                },
+                {
+                    "date": 1662824970341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n-    println!(\"{:#?}\",vx1);\n+    println!(\"{:?}\",vx1);\n+    println!(\"{:?}\",vx2);\n \n \n }\n"
+                },
+                {
+                    "date": 1662825059479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n fn main() {\n     println!(\"Hello, world!\");\n \n+    let x1 = 1;\n+    let x2 = 2.0;\n+\n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n     println!(\"{:?}\",vx1);\n"
+                },
+                {
+                    "date": 1662825083213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n+use peroxide::prelude::Printable;\n+\n fn main() {\n     println!(\"Hello, world!\");\n \n     let x1 = 1;\n     let x2 = 2.0;\n \n+    x1.print();\n+    x2.print();\n+\n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n     println!(\"{:?}\",vx1);\n"
+                },
+                {
+                    "date": 1662825148882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     println!(\"Hello, world!\");\n \n     let x1 = 1;\n     let x2 = 2.0;\n+    let x3 = \"hello\";\n \n     x1.print();\n     x2.print();\n \n"
+                },
+                {
+                    "date": 1662825176251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     let x3 = \"hello\";\n \n     x1.print();\n     x2.print();\n+    println!(\"{:?}\",x3);\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n \n"
+                },
+                {
+                    "date": 1662825420121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     println!(\"{:?}\",x3);\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n+    let vx3 = vec![vec![1,2,3]];\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n"
+                },
+                {
+                    "date": 1662825425612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,8 @@\n     let vx3 = vec![vec![1,2,3]];\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n+    println!(\"{:?}\",vx3);\n \n \n }\n"
+                },
+                {
+                    "date": 1662825489755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n     println!(\"{:?}\",x3);\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n-    let vx3 = vec![vec![1,2,3]];\n+    // let vx3 = vec![vec![1,2,3]];\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n-    println!(\"{:?}\",vx3);\n+    // println!(\"{:?}\",vx3);\n \n \n }\n"
+                },
+                {
+                    "date": 1662825670362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-use peroxide::prelude::Printable;\n+#![allow(non_snake_case)]\n+// #[macro_use]\n+extern crate peroxide;\n+use peroxide::fuga::*;\n \n fn main() {\n     println!(\"Hello, world!\");\n \n"
+                },
+                {
+                    "date": 1662825684318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     println!(\"{:?}\",x3);\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n-    // let vx3 = vec![vec![1,2,3]];\n+    let vx3 = vec![vec![1,2,3]];\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n-    // println!(\"{:?}\",vx3);\n+    println!(\"{:?}\",vx3);\n \n \n }\n"
+                },
+                {
+                    "date": 1662826020643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = vec![1,2,3];\n     let vx3 = vec![vec![1,2,3]];\n+    let vx4 = vec![vec![vec![1,2,3]]];\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n     println!(\"{:?}\",vx3);\n"
+                },
+                {
+                    "date": 1662826028300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,8 @@\n \n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n     println!(\"{:?}\",vx3);\n+    println!(\"{:?}\",vx4);\n \n \n }\n"
+                }
+            ],
+            "date": 1662824854964,
+            "name": "Commit-0",
+            "content": "fn main() {\n    println!(\"Hello, world!\");\n\n    let vx1 = [1,2,3];\n}\n"
+        }
+    ]
+}
