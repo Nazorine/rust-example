@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Cargo.toml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1662826711516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662826741775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,7 @@\n \n # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html\n \n [dependencies]\n+peroxide = \"0.31.6\"\n+serde = { version = \"1.0.133\", features = [\"derive\"] }\n+serde_json = \"1.0.75\"\n"
+                }
+            ],
+            "date": 1662826711516,
+            "name": "Commit-0",
+            "content": "[package]\nname = \"rust-example3\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html\n\n[dependencies]\n"
+        }
+    ]
+}
