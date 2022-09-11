@@ -1,0 +1,242 @@
+{
+    "sourceFile": "src/main.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 56,
+            "patches": [
+                {
+                    "date": 1662871736453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662871757136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     // println!(\"Hello, world!\");\n \n     let vx1 = [1,2,3];\n     let vx2 = [4,5,6];\n-    let vx3 = vx1 + vx2; // 不能相加\n+    //let vx3 = vx1 + vx2; // 不能相加\n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n     let vx6 = vx4 + vx5;\n"
+                },
+                {
+                    "date": 1662871767947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n #![allow(non_snake_case)]\n // #[macro_use]\n extern crate peroxide;\n-use peroxide::fuga::*;\n+// use peroxide::fuga::*;\n \n fn main() {\n     // println!(\"Hello, world!\");\n \n     let vx1 = [1,2,3];\n     let vx2 = [4,5,6];\n-    //let vx3 = vx1 + vx2; // 不能相加\n+    // let vx3 = vx1 + vx2; // 不能相加\n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n     let vx6 = vx4 + vx5;\n"
+                },
+                {
+                    "date": 1662871809544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     // let vx3 = vx1 + vx2; // 不能相加\n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n-    let vx6 = vx4 + vx5;\n+    // let vx6 = vx4 + vx5;  // 不能相交\n }\n"
+                },
+                {
+                    "date": 1662871840510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = [4,5,6];\n     // let vx3 = vx1 + vx2; // 不能相加\n+    println!(\"{}\",vx1);\n+    \n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n-    // let vx6 = vx4 + vx5;  // 不能相交\n+    // let vx6 = vx4 + vx5;  // 不能相加\n }\n"
+                },
+                {
+                    "date": 1662871852789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,12 @@\n \n     let vx1 = [1,2,3];\n     let vx2 = [4,5,6];\n     // let vx3 = vx1 + vx2; // 不能相加\n-    println!(\"{}\",vx1);\n-    \n+    println!(\"{:?}\",vx1);\n+    println!(\"{:?}\",vx2);\n \n+\n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n     // let vx6 = vx4 + vx5;  // 不能相加\n }\n"
+                },
+                {
+                    "date": 1662871858242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,7 @@\n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n     // let vx6 = vx4 + vx5;  // 不能相加\n+    println!(\"{:?}\",vx1);\n+    println!(\"{:?}\",vx2);\n }\n"
+                },
+                {
+                    "date": 1662872072680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n #![allow(non_snake_case)]\n // #[macro_use]\n+\n+use peroxide::prelude::Scalar;\n extern crate peroxide;\n // use peroxide::fuga::*;\n \n fn main() {\n@@ -15,7 +17,11 @@\n \n     let vx4 = vec![1,2,3];\n     let vx5 = vec![4,5,6];\n     // let vx6 = vx4 + vx5;  // 不能相加\n-    println!(\"{:?}\",vx1);\n-    println!(\"{:?}\",vx2);\n+    println!(\"{:?}\",vx4);\n+    println!(\"{:?}\",vx5);\n+\n+\n+// Scalar和vector是最重要的基本概念\n+\n }\n"
+                },
+                {
+                    "date": 1662872078308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n     println!(\"{:?}\",vx4);\n     println!(\"{:?}\",vx5);\n \n \n-// Scalar和vector是最重要的基本概念\n+// Scalar和vector是最重要的基本概念 //\n \n }\n"
+                },
+                {
+                    "date": 1662872099278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n     println!(\"{:?}\",vx4);\n     println!(\"{:?}\",vx5);\n \n \n-// Scalar和vector是最重要的基本概念 //\n+    // Scalar和vector是最重要的基本概念 //\n \n }\n"
+                },
+                {
+                    "date": 1662872107173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n     println!(\"{:?}\",vx4);\n     println!(\"{:?}\",vx5);\n \n \n-    // Scalar和vector是最重要的基本概念 //\n+    //--- Scalar和vector是最重要的基本概念 ---//\n \n }\n"
+                },
+                {
+                    "date": 1662872133129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,7 @@\n     println!(\"{:?}\",vx5);\n \n \n     //--- Scalar和vector是最重要的基本概念 ---//\n+    //--- Scalar和vector是最重要的基本概念 ---//\n \n }\n"
+                },
+                {
+                    "date": 1662872175039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n     println!(\"{:?}\",vx5);\n \n \n     //--- Scalar和vector是最重要的基本概念 ---//\n-    //--- Scalar和vector是最重要的基本概念 ---//\n+    //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n \n }\n"
+                },
+                {
+                    "date": 1662872219965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,8 @@\n \n \n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n+    let vx6 = vec![vec![1,2,3]];\n+    let vx7 = vec![vec![4,5,6]];\n \n }\n"
+                },
+                {
+                    "date": 1662872238323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // #[macro_use]\n \n use peroxide::prelude::Scalar;\n extern crate peroxide;\n-// use peroxide::fuga::*;\n+use peroxide::fuga::*;\n \n fn main() {\n     // println!(\"Hello, world!\");\n \n@@ -25,6 +25,7 @@\n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n+    let mx6 = py_matrix\n \n }\n"
+                },
+                {
+                    "date": 1662872256695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,7 @@\n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n-    let mx6 = py_matrix\n+    let mx6 = py_matrix![vx6];\n \n }\n"
+                },
+                {
+                    "date": 1662872287261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n #![allow(non_snake_case)]\n // #[macro_use]\n \n-use peroxide::prelude::Scalar;\n extern crate peroxide;\n use peroxide::fuga::*;\n \n fn main() {\n@@ -25,7 +24,7 @@\n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n-    let mx6 = py_matrix![vx6];\n+    let mx6 = py_matrix[vx6];\n \n }\n"
+                },
+                {
+                    "date": 1662872298946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n-    let mx6 = py_matrix[vx6];\n+    let mx6 = py_matrix(vx6);\n \n }\n"
+                },
+                {
+                    "date": 1662872371556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,7 @@\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n     let mx6 = py_matrix(vx6);\n+    let mx7 = py_matrix(vx7);\n \n }\n"
+                },
+                {
+                    "date": 1662872391454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,7 @@\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n+    let mx8 = mx6 + mx7;\n \n }\n"
+                },
+                {
+                    "date": 1662872401269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,7 @@\n     let vx7 = vec![vec![4,5,6]];\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n     let mx8 = mx6 + mx7;\n+    mx8.print();\n \n }\n"
+                },
+                {
+                    "date": 1662872439486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,10 @@\n     let vx6 = vec![vec![1,2,3]];\n     let vx7 = vec![vec![4,5,6]];\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n+    mx6.print();\n+    mx7.print();\n     let mx8 = mx6 + mx7;\n     mx8.print();\n \n }\n"
+                },
+                {
+                    "date": 1662873259964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,5 +31,7 @@\n     mx7.print();\n     let mx8 = mx6 + mx7;\n     mx8.print();\n \n+    let mx9 = mx6 * mx7;\n+\n }\n"
+                },
+                {
+                    "date": 1662873267149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n     mx6.print();\n     mx7.print();\n+    \n     let mx8 = mx6 + mx7;\n     mx8.print();\n \n     let mx9 = mx6 * mx7;\n"
+                },
+                {
+                    "date": 1662873286348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n     mx6.print();\n     mx7.print();\n-    \n-    let mx8 = mx6 + mx7;\n+\n+    let mx8 = &mx6 + &mx7;\n     mx8.print();\n \n     let mx9 = mx6 * mx7;\n \n"
+                },
+                {
+                    "date": 1662873360139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,7 @@\n \n     let mx8 = &mx6 + &mx7;\n     mx8.print();\n \n-    let mx9 = mx6 * mx7;\n+    let mx9 = &mx6 * &mx7;\n \n }\n"
+                },
+                {
+                    "date": 1662873367672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,6 +33,7 @@\n     let mx8 = &mx6 + &mx7;\n     mx8.print();\n \n     let mx9 = &mx6 * &mx7;\n+    mx9.print();\n \n }\n"
+                },
+                {
+                    "date": 1662873492696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,8 @@\n \n     let mx8 = &mx6 + &mx7;\n     mx8.print();\n \n-    let mx9 = &mx6 * &mx7;\n+    let mx9 = &mx6 * &mx7.transpose();\n     mx9.print();\n \n }\n"
+                },
+                {
+                    "date": 1662873692223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n     let mx7 = py_matrix(vx7);\n     mx6.print();\n     mx7.print();\n \n-    let mx8 = &mx6 + &mx7;\n+    let mx8 = &mx6 + &mx7;  // 矩阵加法\n     mx8.print();\n \n-    let mx9 = &mx6 * &mx7.transpose();\n+    let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n }\n"
+                },
+                {
+                    "date": 1662873786323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,7 @@\n \n     let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n+    let mx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]]\n+\n }\n"
+                },
+                {
+                    "date": 1662873800742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,7 +35,8 @@\n \n     let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n-    let mx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]]\n+    let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n \n+\n }\n"
+                },
+                {
+                    "date": 1662873807456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,7 +36,9 @@\n     let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n+    let mx10 = py_matrix(vx10);\n+    mx10.print();\n \n \n }\n"
+                },
+                {
+                    "date": 1662873837621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,8 @@\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n+    println!(\"{}\", vx10);\n \n \n }\n"
+                },
+                {
+                    "date": 1662873842948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,8 @@\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n-    println!(\"{}\", vx10);\n+    println!(\"{:?}\", vx10);\n \n \n }\n"
+                },
+                {
+                    "date": 1662873897987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,8 @@\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n-    println!(\"{:?}\", vx10);\n+    mx10.det().print();\n \n \n }\n"
+                },
+                {
+                    "date": 1662873903233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,8 @@\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n-    mx10.det().print();\n+    mx10.det().print(); // 行列式\n \n \n }\n"
+                },
+                {
+                    "date": 1662873983108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n \n     let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n-    mx10.det().print(); // 行列式\n+    mx10.det().print(); // 矩阵的行列式\n+    mx10.inv().print(); // 矩阵的逆\n \n \n }\n"
+                },
+                {
+                    "date": 1662874003918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n     let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n-    let vx10 = vec![vec![1,2,3],vec![4,5,6],vec![7,8,9]];\n+    let vx10 = vec![vec![1,2,3],vec![6,5,4],vec![7,8,9]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n"
+                },
+                {
+                    "date": 1662874021247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \n     let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n-    let vx10 = vec![vec![1,2,3],vec![6,5,4],vec![7,8,9]];\n+    let vx10 = vec![vec![1,2,3],vec![2,5,4],vec![7,8,2]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n"
+                },
+                {
+                    "date": 1662874525828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,8 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n+    vx6.sum()\n \n \n }\n"
+                },
+                {
+                    "date": 1662874541320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n-    vx6.sum()\n+    vx4.sum\n \n \n }\n"
+                },
+                {
+                    "date": 1662874552421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n-    vx4.sum\n+    sum(vx4)\n \n \n }\n"
+                },
+                {
+                    "date": 1662874563153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n-    sum(vx4)\n \n \n+\n }\n"
+                },
+                {
+                    "date": 1662874744740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n+    mx10.transpose().print(); \n \n \n \n }\n"
+                },
+                {
+                    "date": 1662874750869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n-    mx10.transpose().print(); \n+    mx10.transpose().print(); // 矩阵的转置\n \n \n \n }\n"
+                },
+                {
+                    "date": 1662874788447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n+    mx10.diag().print(); // 矩阵的主对角元素\n \n \n \n }\n"
+                },
+                {
+                    "date": 1662874824957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,44 +6,39 @@\n \n fn main() {\n     // println!(\"Hello, world!\");\n \n-    let vx1 = [1,2,3];\n-    let vx2 = [4,5,6];\n+    let vx1 = [1, 2, 3];\n+    let vx2 = [4, 5, 6];\n     // let vx3 = vx1 + vx2; // 不能相加\n-    println!(\"{:?}\",vx1);\n-    println!(\"{:?}\",vx2);\n+    println!(\"{:?}\", vx1);\n+    println!(\"{:?}\", vx2);\n \n-\n-    let vx4 = vec![1,2,3];\n-    let vx5 = vec![4,5,6];\n+    let vx4 = vec![1, 2, 3];\n+    let vx5 = vec![4, 5, 6];\n     // let vx6 = vx4 + vx5;  // 不能相加\n-    println!(\"{:?}\",vx4);\n-    println!(\"{:?}\",vx5);\n+    println!(\"{:?}\", vx4);\n+    println!(\"{:?}\", vx5);\n \n-\n     //--- Scalar和vector是最重要的基本概念 ---//\n     //--- 一维是零维的嵌套、多维是一维的嵌套 ---//\n-    let vx6 = vec![vec![1,2,3]];\n-    let vx7 = vec![vec![4,5,6]];\n+    let vx6 = vec![vec![1, 2, 3]];\n+    let vx7 = vec![vec![4, 5, 6]];\n     let mx6 = py_matrix(vx6);\n     let mx7 = py_matrix(vx7);\n     mx6.print();\n     mx7.print();\n \n-    let mx8 = &mx6 + &mx7;  // 矩阵加法\n+    let mx8 = &mx6 + &mx7; // 矩阵加法\n     mx8.print();\n \n-    let mx9 = &mx6 * &mx7.transpose();  // 矩阵乘法：需满足i*m m*j\n+    let mx9 = &mx6 * &mx7.transpose(); // 矩阵乘法：需满足i*m m*j\n     mx9.print();\n \n-    let vx10 = vec![vec![1,2,3],vec![2,5,4],vec![7,8,2]];\n+    let vx10 = vec![vec![1, 2, 3], vec![2, 5, 4], vec![7, 8, 2]];\n     let mx10 = py_matrix(vx10);\n     mx10.print();\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-\n-\n-\n }\n"
+                },
+                {
+                    "date": 1662874887181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,6 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n+    mx10_col = mx10.col(0);\n }\n"
+                },
+                {
+                    "date": 1662874898736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,5 +41,6 @@\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n     mx10_col = mx10.col(0);\n+    mx10_row = mx10.row(0);\n }\n"
+                },
+                {
+                    "date": 1662874908334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,8 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-    mx10_col = mx10.col(0);\n-    mx10_row = mx10.row(0);\n+    \n+    let mx10_col = mx10.col(0);\n+    let mx10_row = mx10.row(0);\n }\n"
+                },
+                {
+                    "date": 1662874932427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,5 +43,8 @@\n     mx10.diag().print(); // 矩阵的主对角元素\n     \n     let mx10_col = mx10.col(0);\n     let mx10_row = mx10.row(0);\n+\n+    mx10_col.print();\n+    mx10_row.print();\n }\n"
+                },
+                {
+                    "date": 1662875021039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,10 @@\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n     \n-    let mx10_col = mx10.col(0);\n-    let mx10_row = mx10.row(0);\n+    let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n+    let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n \n     mx10_col.print();\n     mx10_row.print();\n }\n"
+                },
+                {
+                    "date": 1662875064614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,16 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n+    mx10.col;\n+    mx10.row;\n     \n     let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n     let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n \n     mx10_col.print();\n     mx10_row.print();\n+\n+\n+\n }\n"
+                },
+                {
+                    "date": 1662875072090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-    mx10.col;\n-    mx10.row;\n+    mx10.col.print();\n+    mx10.row.print();\n     \n     let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n     let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n \n"
+                },
+                {
+                    "date": 1662875077497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-    mx10.col.print();\n+    mx10.col.print(\"sss\");\n     mx10.row.print();\n     \n     let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n     let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n"
+                },
+                {
+                    "date": 1662875086293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-    mx10.col.print(\"sss\");\n+    mx10.col.print(\"{}\");\n     mx10.row.print();\n     \n     let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n     let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n"
+                },
+                {
+                    "date": 1662875142206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n     mx10.det().print(); // 矩阵的行列式\n     mx10.inv().print(); // 矩阵的逆\n     mx10.transpose().print(); // 矩阵的转置\n     mx10.diag().print(); // 矩阵的主对角元素\n-    mx10.col.print(\"{}\");\n-    mx10.row.print();\n+    mx10.col.print(); // 矩阵的列数\n+    mx10.row.print(); // 矩阵的行数\n     \n     let mx10_col = mx10.col(0); // 矩阵的某一列，取出后转化为vector\n     let mx10_row = mx10.row(0); // 矩阵的某一行，取出后转化为vector\n \n"
+                }
+            ],
+            "date": 1662871736453,
+            "name": "Commit-0",
+            "content": "#![allow(non_snake_case)]\n// #[macro_use]\nextern crate peroxide;\nuse peroxide::fuga::*;\n\nfn main() {\n    // println!(\"Hello, world!\");\n\n    let vx1 = [1,2,3];\n    let vx2 = [4,5,6];\n    let vx3 = vx1 + vx2; // 不能相加\n\n    let vx4 = vec![1,2,3];\n    let vx5 = vec![4,5,6];\n    let vx6 = vx4 + vx5;\n}\n"
+        }
+    ]
+}
