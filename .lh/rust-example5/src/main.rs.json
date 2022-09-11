@@ -1,0 +1,18 @@
+{
+    "sourceFile": "rust-example5/src/main.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1662877042911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1662877042911,
+            "name": "Commit-0",
+            "content": "#![allow(non_snake_case)]\n// #[macro_use]\nextern crate peroxide;\nuse peroxide::fuga::*;\n\nfn main() {\n    println!(\"Hello, world!\");\n}\n"
+        }
+    ]
+}
