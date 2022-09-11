@@ -5,11 +5,15 @@ extern crate peroxide;
 use std::env;
 
 fn main() {
-    println!("Hello, world!");
+
+
 
     let args: Vec<String> = env::args().collect::<Vec<_>>();
 
     println!("{:?}", args);
+    for arg in &args {
+        println!("{:?}", arg);
+    }
 
     let x1 = &args[1];
     let x2 = &args[2];
@@ -18,8 +22,6 @@ fn main() {
     // let x3 = x1.parse::<f64>().unwrap();
     // let x3 = x2.parse::<Vec<f64>>().unwrap();
     // println!("{}",x3);
-
-    
 
     
 }
