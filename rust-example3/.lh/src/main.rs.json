@@ -3,11 +3,83 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1662826752344,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662859418369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,11 @@\n use peroxide::fuga::*;\n \n \n fn main() {\n-    println!(\"Hello, world!\");\n+    // println!(\"Hello, world!\");\n+\n+    let x1 = 1;\n+    let x2 = x1;\n+    x1.print();\n+    x2.print();\n }\n"
+                },
+                {
+                    "date": 1662859461954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,9 @@\n     // println!(\"Hello, world!\");\n \n     let x1 = 1;\n     let x2 = x1;\n+    let x3 = x1;\n     x1.print();\n     x2.print();\n+    x3.print();\n }\n"
+                },
+                {
+                    "date": 1662859535676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,11 @@\n     let x3 = x1;\n     x1.print();\n     x2.print();\n     x3.print();\n+\n+    let vx1 = [1,2,3];\n+    let vx2 = vx1;\n+    println!(\"{}\",vx1);\n+    println!(\"{}\",vx2);\n+\n }\n"
+                },
+                {
+                    "date": 1662859546747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n     x3.print();\n \n     let vx1 = [1,2,3];\n     let vx2 = vx1;\n-    println!(\"{}\",vx1);\n-    println!(\"{}\",vx2);\n+    println!(\"{:?}\",vx1);\n+    println!(\"{:?}\",vx2);\n \n }\n"
+                },
+                {
+                    "date": 1662859639758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,7 @@\n     let vx2 = vx1;\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n+    let vx3 = vec![1,2,3];\n+\n }\n"
+                },
+                {
+                    "date": 1662859662958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,9 @@\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n     let vx3 = vec![1,2,3];\n+    let vx4 = vx3;\n+    println!(\"{:?}\",vx3);\n+    println!(\"{:?}\",vx4);\n \n }\n"
+                },
+                {
+                    "date": 1662859774418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n fn main() {\n     // println!(\"Hello, world!\");\n \n     let x1 = 1;\n-    let x2 = x1;\n+    let x2 = x1;  // 简单数据类型存在栈上，自动copy\n     let x3 = x1;\n     x1.print();\n     x2.print();\n     x3.print();\n \n-    let vx1 = [1,2,3];\n-    let vx2 = vx1;\n+    let vx1 = [1,2,3]; \n+    let vx2 = vx1;  // 简单数据类型存在栈上，自动copy\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n     let vx3 = vec![1,2,3];\n"
+                },
+                {
+                    "date": 1662859858999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,13 @@\n     x2.print();\n     x3.print();\n \n     let vx1 = [1,2,3]; \n-    let vx2 = vx1;  // 简单数据类型存在栈上，自动copy\n+    let vx2 = vx1;  // 简单数据类型(scalar、list)存在栈上，自动copy\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n-    let vx3 = vec![1,2,3];\n+    let vx3 = vec![1,2,3];  // 复杂数类型\n     let vx4 = vx3;\n     println!(\"{:?}\",vx3);\n     println!(\"{:?}\",vx4);\n \n"
+                },
+                {
+                    "date": 1662859889919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     let vx2 = vx1;  // 简单数据类型(scalar、list)存在栈上，自动copy\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n-    let vx3 = vec![1,2,3];  // 复杂数类型\n+    let vx3 = vec![1,2,3];  // 复杂数类型(vector)\n     let vx4 = vx3;\n     println!(\"{:?}\",vx3);\n     println!(\"{:?}\",vx4);\n \n"
+                },
+                {
+                    "date": 1662859956231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     println!(\"{:?}\",vx1);\n     println!(\"{:?}\",vx2);\n \n     let vx3 = vec![1,2,3];  // 复杂数类型(vector)\n-    let vx4 = vx3;\n+    let vx4 = vx3;          // 使用后所有权移交至新的变量\n     println!(\"{:?}\",vx3);\n     println!(\"{:?}\",vx4);\n \n }\n"
+                },
+                {
+                    "date": 1662859979175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n     println!(\"{:?}\",vx2);\n \n     let vx3 = vec![1,2,3];  // 复杂数类型(vector)\n     let vx4 = vx3;          // 使用后所有权移交至新的变量\n-    println!(\"{:?}\",vx3);\n+    // println!(\"{:?}\",vx3);          // 这里不能再使用vx3 \n     println!(\"{:?}\",vx4);\n \n }\n"
+                },
+                {
+                    "date": 1662860076102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,7 @@\n     let vx4 = vx3;          // 使用后所有权移交至新的变量\n     // println!(\"{:?}\",vx3);          // 这里不能再使用vx3 \n     println!(\"{:?}\",vx4);\n \n+    let vx5 = vec![4,5,6];\n+\n }\n"
+                },
+                {
+                    "date": 1662860095647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n     // println!(\"{:?}\",vx3);          // 这里不能再使用vx3 \n     println!(\"{:?}\",vx4);\n \n     let vx5 = vec![4,5,6];\n+    let vx6 = &vx5;\n \n }\n"
+                },
+                {
+                    "date": 1662860106005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,9 @@\n     // println!(\"{:?}\",vx3);          // 这里不能再使用vx3 \n     println!(\"{:?}\",vx4);\n \n     let vx5 = vec![4,5,6];\n-    let vx6 = &vx5;\n+    let vx6 = &vx5; \n+    vx5.print();\n+    vx6.print();\n \n }\n"
+                },
+                {
+                    "date": 1662860191568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,7 @@\n     let vx5 = vec![4,5,6];\n     let vx6 = &vx5; \n     vx5.print();\n     vx6.print();\n+    *vx6.print();\n \n }\n"
+                },
+                {
+                    "date": 1662860221023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n     let vx5 = vec![4,5,6];\n     let vx6 = &vx5; \n     vx5.print();\n     vx6.print();\n-    *vx6.print();\n+    println!(\"{:?}\",*vx6);\n \n }\n"
+                },
+                {
+                    "date": 1662860615830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n     println!(\"{:?}\",vx4);\n \n     let vx5 = vec![4,5,6];\n     let vx6 = &vx5; \n+    let vx7 = *vx6;\n     vx5.print();\n     vx6.print();\n     println!(\"{:?}\",*vx6);\n \n"
+                },
+                {
+                    "date": 1662860645941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     println!(\"{:?}\",vx4);\n \n     let vx5 = vec![4,5,6];\n     let vx6 = &vx5; \n-    let vx7 = *vx6;\n+    // let vx7 = *vx6;\n     vx5.print();\n     vx6.print();\n     println!(\"{:?}\",*vx6);\n \n"
                 }
             ],
             "date": 1662826752344,
