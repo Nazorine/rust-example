@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 111,
+            "activePatchIndex": 127,
             "patches": [
                 {
                     "date": 1662877225222,
@@ -452,6 +452,70 @@
                 {
                     "date": 1662891231214,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,22 +13,22 @@\n \n \n fn main() -> Result<(), Box<dyn Error>>  {\n \n-    let x1_ = 1;\n-    let vx1_ = vec![1.0,2.0,3.0];\n-    let vvx1_ = vec![vec![1.0,2.0,3.0]];\n+    // let x1_ = 1;\n+    // let vx1_ = vec![1.0,2.0,3.0];\n+    // let vvx1_ = vec![vec![1.0,2.0,3.0]];\n \n-    let Data_Write_To_Input = WriteToInput {\n-        x1:&x1_,\n-        vx1: &vx1_,\n-        vvx1: &vvx1_,\n-    };\n-    let Data_Out_Write_To_Input = to_string_pretty::<WriteToInput>(&Data_Write_To_Input)?;\n-    let mut Data_In_Write_To_Input = BufWriter::new(File::create(\"input.json\")?);\n-    write!(&mut Data_In_Write_To_Input, \"{}\", Data_Out_Write_To_Input)?;\n+    // let Data_Write_To_Input = WriteToInput {\n+    //     x1:&x1_,\n+    //     vx1: &vx1_,\n+    //     vvx1: &vvx1_,\n+    // };\n+    // let Data_Out_Write_To_Input = to_string_pretty::<WriteToInput>(&Data_Write_To_Input)?;\n+    // let mut Data_In_Write_To_Input = BufWriter::new(File::create(\"input.json\")?);\n+    // write!(&mut Data_In_Write_To_Input, \"{}\", Data_Out_Write_To_Input)?;\n \n-    println!(\"{}\",Data_Write_To_Input);\n+    // println!(\"{:?}\",Data_Write_To_Input);\n \n \n     /////从input.json文件读取输入数据\n     let Data_Read_From_Input_File = BufReader::new(File::open(\"input.json\")?);\n"
+                },
+                {
+                    "date": 1662891980114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     // println!(\"{:?}\",Data_Write_To_Input);\n \n \n     /////从input.json文件读取输入数据\n-    let Data_Read_From_Input_File = BufReader::new(File::open(\"input.json\")?);\n+    let Data_Read_From_Input = BufReader::new(File::open(\"input.json\")?);\n     let InputData {\n         x1,\n         vx1,\n         vvx1,\n"
+                },
+                {
+                    "date": 1662891992981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,11 +35,10 @@\n     let InputData {\n         x1,\n         vx1,\n         vvx1,\n-    } = from_reader::<_, InputData>(Data_Read_From_Input_File)?;\n+    } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n-    println!(\"{}\",x1);\n \n     \n \n     let Data_Write_To_Output = OutputData {\n"
+                },
+                {
+                    "date": 1662892009431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         x1:&x1,\n         vx1: &vx1,\n         vvx1: &vvx1,\n     };\n-    let Data_Out_Write_To_Output = to_string_pretty::<OutputData>(&Data_Write_To_Output)?;\n+    let Data_Write_To_Output_Out = to_string_pretty::<OutputData>(&Data_Write_To_Output)?;\n     let mut Data_In_Write_To_Output = BufWriter::new(File::create(\"output.json\")?);\n     write!(&mut Data_In_Write_To_Output, \"{}\", Data_Out_Write_To_Output)?;\n     println!(\"ok!\");\n     Ok(())\n"
+                },
+                {
+                    "date": 1662892018386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,10 @@\n         vx1: &vx1,\n         vvx1: &vvx1,\n     };\n     let Data_Write_To_Output_Out = to_string_pretty::<OutputData>(&Data_Write_To_Output)?;\n-    let mut Data_In_Write_To_Output = BufWriter::new(File::create(\"output.json\")?);\n-    write!(&mut Data_In_Write_To_Output, \"{}\", Data_Out_Write_To_Output)?;\n+    let mut Data_Write_To_Output_In = BufWriter::new(File::create(\"output.json\")?);\n+    write!(&mut Data_Write_To_Output_In, \"{}\", Data_Out_Write_To_Output)?;\n     println!(\"ok!\");\n     Ok(())\n     \n }\n"
+                },
+                {
+                    "date": 1662892064220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         vvx1: &vvx1,\n     };\n     let Data_Write_To_Output_Out = to_string_pretty::<OutputData>(&Data_Write_To_Output)?;\n     let mut Data_Write_To_Output_In = BufWriter::new(File::create(\"output.json\")?);\n-    write!(&mut Data_Write_To_Output_In, \"{}\", Data_Out_Write_To_Output)?;\n+    write!(&mut Data_Write_To_Output_In, \"{}\", Data_Write_To_Output_Out)?;\n     println!(\"ok!\");\n     Ok(())\n     \n }\n"
+                },
+                {
+                    "date": 1662892073396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,9 @@\n         vx1,\n         vvx1,\n     } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n-\n     \n-\n     let Data_Write_To_Output = OutputData {\n         x1:&x1,\n         vx1: &vx1,\n         vvx1: &vvx1,\n"
+                },
+                {
+                    "date": 1662892093392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         vx1,\n         vvx1,\n     } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n-    \n+    /////从input.json文件读取输入数据\n     let Data_Write_To_Output = OutputData {\n         x1:&x1,\n         vx1: &vx1,\n         vvx1: &vvx1,\n"
+                },
+                {
+                    "date": 1662892110821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         vx1,\n         vvx1,\n     } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n-    /////从input.json文件读取输入数据\n+    /////将结果写入ouput.json\n     let Data_Write_To_Output = OutputData {\n         x1:&x1,\n         vx1: &vx1,\n         vvx1: &vvx1,\n"
+                },
+                {
+                    "date": 1662892129803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,10 @@\n         vx1,\n         vvx1,\n     } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n+\n+    \n     /////将结果写入ouput.json\n     let Data_Write_To_Output = OutputData {\n         x1:&x1,\n         vx1: &vx1,\n"
+                },
+                {
+                    "date": 1662892135910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,24 +13,9 @@\n \n \n fn main() -> Result<(), Box<dyn Error>>  {\n \n-    // let x1_ = 1;\n-    // let vx1_ = vec![1.0,2.0,3.0];\n-    // let vvx1_ = vec![vec![1.0,2.0,3.0]];\n \n-    // let Data_Write_To_Input = WriteToInput {\n-    //     x1:&x1_,\n-    //     vx1: &vx1_,\n-    //     vvx1: &vvx1_,\n-    // };\n-    // let Data_Out_Write_To_Input = to_string_pretty::<WriteToInput>(&Data_Write_To_Input)?;\n-    // let mut Data_In_Write_To_Input = BufWriter::new(File::create(\"input.json\")?);\n-    // write!(&mut Data_In_Write_To_Input, \"{}\", Data_Out_Write_To_Input)?;\n-\n-    // println!(\"{:?}\",Data_Write_To_Input);\n-\n-\n     /////从input.json文件读取输入数据\n     let Data_Read_From_Input = BufReader::new(File::open(\"input.json\")?);\n     let InputData {\n         x1,\n@@ -38,9 +23,9 @@\n         vvx1,\n     } = from_reader::<_, InputData>(Data_Read_From_Input)?;\n \n \n-    \n+\n     /////将结果写入ouput.json\n     let Data_Write_To_Output = OutputData {\n         x1:&x1,\n         vx1: &vx1,\n"
+                },
+                {
+                    "date": 1662892163851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,8 @@\n \n \n fn main() -> Result<(), Box<dyn Error>>  {\n \n-\n     /////从input.json文件读取输入数据\n     let Data_Read_From_Input = BufReader::new(File::open(\"input.json\")?);\n     let InputData {\n         x1,\n@@ -42,15 +41,8 @@\n \n \n /////////////////////////////////////////////////////\n \n-#[derive(Serialize, Debug)]\n-struct WriteToInput <'a> {\n-    x1:&'a i32,\n-    vx1: &'a Vec<f64>,\n-    vvx1: &'a Vec<Vec<f64>>,\n-}\n-\n #[derive(Deserialize)]\n struct InputData {\n     x1: i32,\n     vx1: Vec<f64>,\n"
+                },
+                {
+                    "date": 1662892169803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n use std::io::BufReader;\n use std::io::BufWriter;\n //\n use serde::{Deserialize, Serialize};\n+use serde::{Deserialize, Serialize};\n use serde_json::from_reader;\n use serde_json::to_string_pretty;\n \n \n"
+                },
+                {
+                    "date": 1662892184590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n use std::io::prelude::*;\n use std::io::BufReader;\n use std::io::BufWriter;\n //\n-use serde::{Deserialize, Serialize};\n-use serde::{Deserialize, Serialize};\n+use serde::Deserialize;\n+use serde::Serialize};\n use serde_json::from_reader;\n use serde_json::to_string_pretty;\n \n \n"
+                },
+                {
+                    "date": 1662892191146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n use std::io::prelude::*;\n use std::io::BufReader;\n use std::io::BufWriter;\n //\n-use serde::Deserialize;\n-use serde::Serialize};\n+use serde::Deserialize;  // Input\n+use serde::Serialize;\n use serde_json::from_reader;\n use serde_json::to_string_pretty;\n \n \n"
+                },
+                {
+                    "date": 1662892197771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n use std::io::BufReader;\n use std::io::BufWriter;\n //\n use serde::Deserialize;  // Input\n-use serde::Serialize;\n+use serde::Serialize;    // Output\n use serde_json::from_reader;\n use serde_json::to_string_pretty;\n \n \n"
+                },
+                {
+                    "date": 1662892209264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,8 @@\n     \n }\n \n \n-\n /////////////////////////////////////////////////////\n \n #[derive(Deserialize)]\n struct InputData {\n"
                 }
             ],
             "date": 1662877225222,
