@@ -1,0 +1,130 @@
+{
+    "sourceFile": "src/main.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 28,
+            "patches": [
+                {
+                    "date": 1662877225222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1662877233013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,8 @@\n use std::env;\n \n fn main() {\n     println!(\"Hello, world!\");\n+\n+    let args: Vec<String> = env::args().collect();\n+    println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662877941403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n #![allow(non_snake_case)]\n // #[macro_use]\n extern crate peroxide;\n-use peroxide::fuga::*;\n+// use peroxide::fuga::*;\n use std::env;\n \n fn main() {\n     println!(\"Hello, world!\");\n \n-    let args: Vec<String> = env::args().collect();\n+    let args: Vec<String> = env::args().collect::<Vec<>>();\n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662877960165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n fn main() {\n     println!(\"Hello, world!\");\n \n-    let args: Vec<String> = env::args().collect::<Vec<>>();\n+    let args: Vec<String> = env::args().collect::<Vec<_>>();\n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878006817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n fn main() {\n     println!(\"Hello, world!\");\n \n-    let args: Vec<String> = env::args().collect::<Vec<_>>();\n+    let args: Vec<String> = env::args().collect::<Vec<f64>>();\n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878021848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n \n fn main() {\n     println!(\"Hello, world!\");\n \n-    let args: Vec<String> = env::args().collect::<Vec<f64>>();\n+    let args: Vec<String> = env::args().collect::<Vec<_>>();\n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878087518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,9 @@\n fn main() {\n     println!(\"Hello, world!\");\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n+\n+    let x1 = args[1];\n+\n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878113919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n     println!(\"Hello, world!\");\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n-    let x1 = args[1];\n+    let x1 = &args[1];\n \n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878121366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     let x1 = &args[1];\n+    let x2 = &args[2];\n \n     println!(\"{:?}\", args);\n }\n"
+                },
+                {
+                    "date": 1662878128174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n     println!(\"Hello, world!\");\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n+    println!(\"{:?}\", args);\n+\n     let x1 = &args[1];\n     let x2 = &args[2];\n \n-    println!(\"{:?}\", args);\n+    \n }\n"
+                },
+                {
+                    "date": 1662878144439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,8 @@\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n \n+    println!(\"{}{}\", x1, x2);\n+\n     \n }\n"
+                },
+                {
+                    "date": 1662878161655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n \n-    println!(\"{}{}\", x1, x2);\n+    println!(\"{:?}{:?}\", x1, x2);\n \n     \n }\n"
+                },
+                {
+                    "date": 1662878362408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n \n+    let x3 = x1.parse().unwrap();\n+\n     println!(\"{:?}{:?}\", x1, x2);\n \n     \n }\n"
+                },
+                {
+                    "date": 1662878375987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n \n-    let x3 = x1.parse().unwrap();\n+    let x3 = x1.parse::<f64>().unwrap();\n \n     println!(\"{:?}{:?}\", x1, x2);\n \n     \n"
+                },
+                {
+                    "date": 1662878384087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,12 @@\n     println!(\"{:?}\", args);\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n+    println!(\"{:?}{:?}\", x1, x2);\n \n     let x3 = x1.parse::<f64>().unwrap();\n \n-    println!(\"{:?}{:?}\", x1, x2);\n+    \n \n     \n }\n"
+                },
+                {
+                    "date": 1662878394880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     let x2 = &args[2];\n     println!(\"{:?}{:?}\", x1, x2);\n \n     let x3 = x1.parse::<f64>().unwrap();\n+    println!(\"{}\",x3);\n \n     \n \n     \n"
+                },
+                {
+                    "date": 1662878487383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     let x2 = &args[2];\n     println!(\"{:?}{:?}\", x1, x2);\n \n     let x3 = x1.parse::<f64>().unwrap();\n+    let x3 = x2.parse::<Vec<f64>>().unwrap();\n     println!(\"{}\",x3);\n \n     \n \n"
+                },
+                {
+                    "date": 1662878747153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     let x1 = &args[1];\n     let x2 = &args[2];\n     println!(\"{:?}{:?}\", x1, x2);\n \n-    let x3 = x1.parse::<f64>().unwrap();\n-    let x3 = x2.parse::<Vec<f64>>().unwrap();\n-    println!(\"{}\",x3);\n+    // let x3 = x1.parse::<f64>().unwrap();\n+    // let x3 = x2.parse::<Vec<f64>>().unwrap();\n+    // println!(\"{}\",x3);\n \n     \n \n     \n"
+                },
+                {
+                    "date": 1662879596670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,12 @@\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     println!(\"{:?}\", args);\n+    println!(\"{:?}\", args);\n+    for arg in args {\n+        println!(\"{:?}\", arg);\n+    }\n \n     let x1 = &args[1];\n     let x2 = &args[2];\n     println!(\"{:?}{:?}\", x1, x2);\n"
+                },
+                {
+                    "date": 1662879613341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,9 @@\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     println!(\"{:?}\", args);\n-    println!(\"{:?}\", args);\n-    for arg in args {\n+    for arg in &args {\n         println!(\"{:?}\", arg);\n     }\n \n     let x1 = &args[1];\n"
+                },
+                {
+                    "date": 1662885459506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,12 @@\n // use peroxide::fuga::*;\n use std::env;\n \n fn main() {\n-    println!(\"Hello, world!\");\n+    // println!(\"Hello, world!\");\n \n+    let startTime = SystemTime::now();\n+\n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     println!(\"{:?}\", args);\n     for arg in &args {\n"
+                },
+                {
+                    "date": 1662885490073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n // #[macro_use]\n extern crate peroxide;\n // use peroxide::fuga::*;\n use std::env;\n+use std::time::{Duration, SystemTime};\n \n fn main() {\n     // println!(\"Hello, world!\");\n \n"
+                },
+                {
+                    "date": 1662885523315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,8 @@\n     // let x3 = x1.parse::<f64>().unwrap();\n     // let x3 = x2.parse::<Vec<f64>>().unwrap();\n     // println!(\"{}\",x3);\n \n-    \n+    let duration: Duration = SystemTime::now().duration_since(startTime)?;\n \n     \n }\n"
+                },
+                {
+                    "date": 1662885648183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n // #[macro_use]\n extern crate peroxide;\n // use peroxide::fuga::*;\n use std::env;\n+use std::io::BufReader;\n+use std::io::BufWriter;\n use std::time::{Duration, SystemTime};\n \n fn main() {\n     // println!(\"Hello, world!\");\n"
+                },
+                {
+                    "date": 1662885700804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,37 @@\n use std::io::BufWriter;\n use std::time::{Duration, SystemTime};\n \n fn main() {\n-    // println!(\"Hello, world!\");\n \n+    \n+\n+    let input_file = BufReader::new(File::open(\"input.json\")?);\n+\n+    /////从input.json文件读取输入数据\n+    let InputData {\n+        n_layer,\n+        L,\n+        Emm,\n+        mu,\n+        h,\n+        P,\n+        Q,\n+        a,\n+        p,\n+        q,\n+        xx_,\n+        yy_,\n+        n_d,\n+        mut upper_h,\n+        mut n_i,\n+        n_series,\n+        xx,\n+        yy,\n+        zz,\n+        NN,\n+    } = from_reader::<_, InputData>(input_file)?;\n+\n     let startTime = SystemTime::now();\n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n"
+                },
+                {
+                    "date": 1662885711088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n use std::time::{Duration, SystemTime};\n \n fn main() {\n \n-    \n+    let startTime = SystemTime::now();\n \n     let input_file = BufReader::new(File::open(\"input.json\")?);\n \n     /////从input.json文件读取输入数据\n@@ -36,9 +36,9 @@\n         zz,\n         NN,\n     } = from_reader::<_, InputData>(input_file)?;\n \n-    let startTime = SystemTime::now();\n+    \n \n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     println!(\"{:?}\", args);\n"
+                },
+                {
+                    "date": 1662885859800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,38 +8,10 @@\n use std::time::{Duration, SystemTime};\n \n fn main() {\n \n-    let startTime = SystemTime::now();\n \n-    let input_file = BufReader::new(File::open(\"input.json\")?);\n \n-    /////从input.json文件读取输入数据\n-    let InputData {\n-        n_layer,\n-        L,\n-        Emm,\n-        mu,\n-        h,\n-        P,\n-        Q,\n-        a,\n-        p,\n-        q,\n-        xx_,\n-        yy_,\n-        n_d,\n-        mut upper_h,\n-        mut n_i,\n-        n_series,\n-        xx,\n-        yy,\n-        zz,\n-        NN,\n-    } = from_reader::<_, InputData>(input_file)?;\n-\n-    \n-\n     let args: Vec<String> = env::args().collect::<Vec<_>>();\n \n     println!(\"{:?}\", args);\n     for arg in &args {\n"
+                },
+                {
+                    "date": 1662885865466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,8 @@\n // #[macro_use]\n extern crate peroxide;\n // use peroxide::fuga::*;\n use std::env;\n-use std::io::BufReader;\n-use std::io::BufWriter;\n-use std::time::{Duration, SystemTime};\n \n fn main() {\n \n \n"
+                },
+                {
+                    "date": 1662885870773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,6 @@\n     // let x3 = x1.parse::<f64>().unwrap();\n     // let x3 = x2.parse::<Vec<f64>>().unwrap();\n     // println!(\"{}\",x3);\n \n-    let duration: Duration = SystemTime::now().duration_since(startTime)?;\n-\n     \n }\n"
+                }
+            ],
+            "date": 1662877225222,
+            "name": "Commit-0",
+            "content": "#![allow(non_snake_case)]\n// #[macro_use]\nextern crate peroxide;\nuse peroxide::fuga::*;\nuse std::env;\n\nfn main() {\n    println!(\"Hello, world!\");\n}\n"
+        }
+    ]
+}
