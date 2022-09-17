@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Cargo.toml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1663373777932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1663373777932,
+            "name": "Commit-0",
+            "content": "[package]\nname = \"toolib\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html\n\n[dependencies]\n\n\n[lib]\nname = \"orz\"\ncrate-type = [\"cdylib\"]\n"
+        }
+    ]
+}

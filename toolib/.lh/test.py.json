@@ -1,0 +1,54 @@
+{
+    "sourceFile": "test.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1663373837642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1663373843185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n \r\n print(\"====== Python ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n print(\"result is: \" + str(result))\r\n-运行：\r\n+\r\n"
+                },
+                {
+                    "date": 1663373925850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import time\r\n from ctypes import cdll\r\n \r\n-lib = cdll.LoadLibrary(\"target/release/toolib.dll\")\r\n+lib = cdll.LoadLibrary(\"target/release/orz.dll\")\r\n \r\n t1 = time.time()\r\n result = lib.fibonacci(35)\r\n t2 = time.time()\r\n"
+                },
+                {
+                    "date": 1663374181473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n lib = cdll.LoadLibrary(\"target/release/orz.dll\")\r\n \r\n t1 = time.time()\r\n-result = lib.fibonacci(35)\r\n+result = lib.add(35)\r\n t2 = time.time()\r\n \r\n print(\"====== Rust ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n"
+                },
+                {
+                    "date": 1663374218315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,17 +10,6 @@\n print(\"====== Rust ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n print(\"result is: \" + str(result))\r\n \r\n-def F(n):\r\n-    if n == 0: return 0\r\n-    elif n == 1: return 1\r\n-    else: return F(n-1)+F(n-2)\r\n \r\n-t1 = time.time()\r\n-result = F(35)\r\n-t2 = time.time()\r\n \r\n-print(\"====== Python ======\")\r\n-print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n-print(\"result is: \" + str(result))\r\n-\r\n"
+                },
+                {
+                    "date": 1663374232285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n lib = cdll.LoadLibrary(\"target/release/orz.dll\")\r\n \r\n t1 = time.time()\r\n-result = lib.add(35)\r\n+result = lib.add(35,35)\r\n t2 = time.time()\r\n \r\n print(\"====== Rust ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n"
+                },
+                {
+                    "date": 1663374256215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n from ctypes import cdll\r\n \r\n lib = cdll.LoadLibrary(\"target/release/orz.dll\")\r\n \r\n+print(lib)\r\n+\r\n t1 = time.time()\r\n result = lib.add(35,35)\r\n t2 = time.time()\r\n \r\n"
+                },
+                {
+                    "date": 1663374281722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n from ctypes import cdll\r\n \r\n lib = cdll.LoadLibrary(\"target/release/orz.dll\")\r\n \r\n-print(lib)\r\n \r\n t1 = time.time()\r\n result = lib.add(35,35)\r\n t2 = time.time()\r\n"
+                },
+                {
+                    "date": 1663374293908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,7 @@\n print(\"====== Rust ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n print(\"result is: \" + str(result))\r\n \r\n+print(result)\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1663374309340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n print(\"====== Rust ======\")\r\n print(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\n print(\"result is: \" + str(result))\r\n \r\n-print(result)\r\n+print(result,type(result))\r\n \r\n \r\n"
+                }
+            ],
+            "date": 1663373837642,
+            "name": "Commit-0",
+            "content": "import time\r\nfrom ctypes import cdll\r\n\r\nlib = cdll.LoadLibrary(\"target/release/toolib.dll\")\r\n\r\nt1 = time.time()\r\nresult = lib.fibonacci(35)\r\nt2 = time.time()\r\n\r\nprint(\"====== Rust ======\")\r\nprint(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\nprint(\"result is: \" + str(result))\r\n\r\ndef F(n):\r\n    if n == 0: return 0\r\n    elif n == 1: return 1\r\n    else: return F(n-1)+F(n-2)\r\n\r\nt1 = time.time()\r\nresult = F(35)\r\nt2 = time.time()\r\n\r\nprint(\"====== Python ======\")\r\nprint(\"use time: \" + str(round(t2 - t1, 2)) + \"s\")\r\nprint(\"result is: \" + str(result))\r\n运行：\r\n"
+        }
+    ]
+}
